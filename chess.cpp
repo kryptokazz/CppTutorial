@@ -41,17 +41,26 @@ int main() {
     std::vector<float> vertices;
     for (int i = 0; i < 8; ++i) {
         for (int j = 0; j < 8; ++j) {
-            vertices.push_back(-1.0f + i * 0.25f);
-            vertices.push_back(-1.0f + j * 0.25f);
+            float x0 = -1.0f + i * 0.25f;
+            float y0 = -1.0f + j * 0.25f;
+            float x1 = x0 + 0.25f;
+            float y1 = y0 + 0.25f;
 
-            vertices.push_back(-1.0f + (i + 1) * 0.25f);
-            vertices.push_back(-1.0f + j * 0.25f);
+            // First triangle
+            vertices.push_back(x0);
+            vertices.push_back(y0);
+            vertices.push_back(x1);
+            vertices.push_back(y0);
+            vertices.push_back(x1);
+            vertices.push_back(y1);
 
-            vertices.push_back(-1.0f + (i + 1) * 0.25f);
-            vertices.push_back(-1.0f + (j + 1) * 0.25f);
-
-            vertices.push_back(-1.0f + i * 0.25f);
-            vertices.push_back(-1.0f + (j + 1) * 0.25f);
+            // Second triangle
+            vertices.push_back(x0);
+            vertices.push_back(y0);
+            vertices.push_back(x1);
+            vertices.push_back(y1);
+            vertices.push_back(x0);
+            vertices.push_back(y1);
         }
     }
 
@@ -84,7 +93,7 @@ int main() {
 
         // Draw chessboard
         glBindVertexArray(VAO);
-        glDrawArrays(GL_QUADS, 0, vertices.size() / 2);
+        glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 2);
         glBindVertexArray(0);
 
         // Swap buffers
