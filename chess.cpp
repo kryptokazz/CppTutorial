@@ -106,3 +106,35 @@ int main() {
     glfwTerminate();
     return 0;
 }
+
+
+/* In file included from Model.h:5,
+                 from Main.cpp:7:
+Mesh.h:18:13: error: declaration of ‘VAO Mesh::VAO’ changes meaning of ‘VAO’ [-Wchanges-meaning]
+   18 |         VAO VAO;
+      |             ^~~
+Mesh.h:18:9: note: used here to mean ‘class VAO’
+   18 |         VAO VAO;
+      |         ^~~
+In file included from Mesh.h:6:
+VAO.h:7:7: note: declared here
+    7 | class VAO
+      |       ^~~
+Main.cpp:17:7: error: ‘float gamma’ redeclared as different kind of entity
+   17 | float gamma = 2.2f;
+      |       ^~~~~
+In file included from /usr/include/features.h:503,
+                 from /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/os_defines.h:39,
+                 from /usr/include/c++/13.2.1/x86_64-pc-linux-gnu/bits/c++config.h:679,
+                 from /usr/include/c++/13.2.1/bits/requires_hosted.h:31,
+                 from /usr/include/c++/13.2.1/filesystem:35,
+                 from Main.cpp:3:
+/usr/include/bits/mathcalls.h:244:1: note: previous declaration ‘double gamma(double)’
+  244 | __MATHCALL (gamma,, (_Mdouble_));
+      | ^~~~~~~~~~
+Main.cpp: In function ‘int main()’:
+Main.cpp:100:75: error: cannot convert ‘double (*)(double) noexcept’ to ‘GLfloat’ {aka ‘float’} in argument passing
+  100 |         glUniform1f(glGetUniformLocation(framebufferProgram.ID, "gamma"), gamma);
+      |                                                                           ^~~~~
+      |                                                                           |
+      |                                                                           double (*)(double) noexcept */
