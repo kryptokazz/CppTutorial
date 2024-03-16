@@ -42,7 +42,6 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT);
 
         // Draw chessboard
-        glLoadIdentity();
         glBegin(GL_QUADS);
         for (int i = 0; i < 8; ++i) {
             for (int j = 0; j < 8; ++j) {
