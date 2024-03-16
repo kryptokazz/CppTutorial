@@ -108,25 +108,4 @@ int main() {
 }
 
 
-/*g++ -o modelImporter Main.cpp Model.cpp VAO.cpp EBO.cpp VBO.cpp Camera.cpp shaderClass.cpp Texture.cpp glad.c EBO.cpp stb.cpp -lglfw -lGL -lX11 -lpthread -lXrandr -lXi
-/usr/bin/ld: /tmp/ccvaVhaL.o: in function `EBO::EBO(std::vector<unsigned int, std::allocator<unsigned int> >&)':
-EBO.cpp:(.text+0x0): multiple definition of `EBO::EBO(std::vector<unsigned int, std::allocator<unsigned int> >&)'; /tmp/cclUUw4u.o:EBO.cpp:(.text+0x0): first defined here
-/usr/bin/ld: /tmp/ccvaVhaL.o: in function `EBO::EBO(std::vector<unsigned int, std::allocator<unsigned int> >&)':
-EBO.cpp:(.text+0x0): multiple definition of `EBO::EBO(std::vector<unsigned int, std::allocator<unsigned int> >&)'; /tmp/cclUUw4u.o:EBO.cpp:(.text+0x0): first defined here
-/usr/bin/ld: /tmp/ccvaVhaL.o: in function `EBO::Bind()':
-EBO.cpp:(.text+0x80): multiple definition of `EBO::Bind()'; /tmp/cclUUw4u.o:EBO.cpp:(.text+0x80): first defined here
-/usr/bin/ld: /tmp/ccvaVhaL.o: in function `EBO::Unbind()':
-EBO.cpp:(.text+0xa6): multiple definition of `EBO::Unbind()'; /tmp/cclUUw4u.o:EBO.cpp:(.text+0xa6): first defined here
-/usr/bin/ld: /tmp/ccvaVhaL.o: in function `EBO::Delete()':
-EBO.cpp:(.text+0xc8): multiple definition of `EBO::Delete()'; /tmp/cclUUw4u.o:EBO.cpp:(.text+0xc8): first defined here
-/usr/bin/ld: /tmp/ccFwFusl.o: in function `main':
-Main.cpp:(.text+0xdc6): undefined reference to `Mesh::Mesh(std::vector<Vertex, std::allocator<Vertex> >&, std::vector<unsigned int, std::allocator<unsigned int> >&, std::vector<Texture, std::allocator<Texture> >&)'
-/usr/bin/ld: Main.cpp:(.text+0x1302): undefined reference to `Mesh::Draw(Shader&, Camera&, glm::mat<4, 4, float, (glm::qualifier)0>, glm::vec<3, float, (glm::qualifier)0>, glm::qua<float, (glm::qualifier)0>, glm::vec<3, float, (glm::qualifier)0>)'
-/usr/bin/ld: /tmp/ccXIjw7z.o: in function `Model::Draw(Shader&, Camera&)':
-Model.cpp:(.text+0x6fd): undefined reference to `Mesh::Draw(Shader&, Camera&, glm::mat<4, 4, float, (glm::qualifier)0>, glm::vec<3, float, (glm::qualifier)0>, glm::qua<float, (glm::qualifier)0>, glm::vec<3, float, (glm::qualifier)0>)'
-/usr/bin/ld: /tmp/ccXIjw7z.o: in function `Model::loadMesh(unsigned int)':
-Model.cpp:(.text+0xcd2): undefined reference to `Mesh::Mesh(std::vector<Vertex, std::allocator<Vertex> >&, std::vector<unsigned int, std::allocator<unsigned int> >&, std::vector<Texture, std::allocator<Texture> >&)'
-collect2: error: ld returned 1 exit status*/
-
-g++ -o modelImporter Main.cpp Model.cpp VAO.cpp EBO.cpp VBO.cpp Camera.cpp shaderClass.cpp Texture.cpp glad.c stb.cpp -std=c++17 -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -lstdc++fs
 
