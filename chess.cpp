@@ -127,3 +127,6 @@ Model.cpp:(.text+0x6fd): undefined reference to `Mesh::Draw(Shader&, Camera&, gl
 /usr/bin/ld: /tmp/ccXIjw7z.o: in function `Model::loadMesh(unsigned int)':
 Model.cpp:(.text+0xcd2): undefined reference to `Mesh::Mesh(std::vector<Vertex, std::allocator<Vertex> >&, std::vector<unsigned int, std::allocator<unsigned int> >&, std::vector<Texture, std::allocator<Texture> >&)'
 collect2: error: ld returned 1 exit status*/
+
+g++ -o modelImporter Main.cpp Model.cpp VAO.cpp EBO.cpp VBO.cpp Camera.cpp shaderClass.cpp Texture.cpp glad.c stb.cpp -std=c++17 -lglfw -lGL -lX11 -lpthread -lXrandr -lXi -lstdc++fs
+
